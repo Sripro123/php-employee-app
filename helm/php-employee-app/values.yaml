@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: 269626332875.dkr.ecr.us-west-2.amazonaws.com/php-employee-app
-  tag: "1"
+  tag: "1.0"
   pullPolicy: Always
 
 imagePullSecrets:
