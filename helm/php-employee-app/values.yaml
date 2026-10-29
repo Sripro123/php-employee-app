@@ -1,0 +1,31 @@
+
+replicaCount: 1
+
+image:
+  repository: 269626332875.dkr.ecr.us-west-2.amazonaws.com/php-employee-app
+  tag: "1"
+  pullPolicy: Always
+
+imagePullSecrets:
+  - name: ecr-registry-secret
+
+service:
+  type: NodePort
+  port: 80
+  nodePort: 30080
+
+mysql:
+  image: mysql:8.0
+  database: employee_db
+  username: appuser
+  storage: 2Gi
+  rootPassword: ""
+  password: ""
+  createSecret: false
+
+config:
+  DB_HOST: mysql
+  DB_NAME: employee_db
+
+nameOverride: ""
+fullnameOverride: php-employee-app
